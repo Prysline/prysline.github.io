@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo相關筆記與網站</title>
+    <url>/hexo/20220103/1845879727/</url>
+    <content><![CDATA[<p>紀錄一下建置Hexo時想先筆記起來，方便往後回顧的內容</p>
+<h2 id="入門-Start"><a href="#入門-Start" class="headerlink" title="入門 Start"></a>入門 Start</h2><ul>
+<li><a href="https://hsiangfeng.github.io/hexo/20200914/3741834499/">(1) 試著學 Hexo - 序章</a></li>
+</ul>
+<span id="more"></span>
+
+<h2 id="套件-Packages"><a href="#套件-Packages" class="headerlink" title="套件 Packages"></a>套件 Packages</h2><ul>
+<li><strong>hexo-abbrlink</strong><br><a href="https://hsiangfeng.github.io/hexo/20190517/2562079032/">Hexo Url優化(SEO)</a></li>
+<li><strong>hexo-generator-searchdb</strong><br><a href="https://hsiangfeng.github.io/hexo/20201003/38607376/">(20) 試著學 Hexo - NexT 主題篇 - 可以安裝的套件</a></li>
+</ul>
+<h2 id="插件-Plugins"><a href="#插件-Plugins" class="headerlink" title="插件 Plugins"></a>插件 Plugins</h2><ul>
+<li><strong><a href="https://www.addthis.com/">AddThis</a></strong><br><a href="https://hsiangfeng.github.io/hexo/20201002/1128269164/#AddThis">(19) 試著學 Hexo - NexT 主題篇 - 第三方服務#AddThis</a></li>
+</ul>
+<h2 id="主題-Theme"><a href="#主題-Theme" class="headerlink" title="主題 Theme"></a>主題 Theme</h2><p>收錄個人喜歡的Hexo主題，偏好簡潔為主的設計</p>
+<ul>
+<li><a href="https://github.com/next-theme/hexo-theme-next">hexo-theme-next</a>  目前使用的</li>
+<li><a href="https://github.com/zchengsite/hexo-theme-oranges">hexo-theme-oranges</a></li>
+<li><a href="https://github.com/lh1me/hexo-theme-aomori">hexo-theme-aomori</a><h3 id="多層目錄側邊欗"><a href="#多層目錄側邊欗" class="headerlink" title="多層目錄側邊欗"></a>多層目錄側邊欗</h3></li>
+<li><a href="https://github.com/kaiiiz/hexo-theme-book">hexo-theme-book</a></li>
+<li><a href="https://github.com/wujun234/hexo-theme-tree">hexo-theme-tree</a></li>
+<li><a href="https://github.com/kb1000fx/hexo-theme-insulin">hexo-theme-insulin</a> Vue-like<h3 id="wiki風格"><a href="#wiki風格" class="headerlink" title="wiki風格"></a>wiki風格</h3></li>
+<li><a href="https://github.com/zthxxx/hexo-theme-Wikitten">hexo-theme-Wikitten</a></li>
+<li><a href="https://github.com/xaoxuu/hexo-theme-stellar">hexo-theme-stellar</a><h3 id="書本主題"><a href="#書本主題" class="headerlink" title="書本主題"></a>書本主題</h3></li>
+<li><a href="https://github.com/nexmoe/hexo-theme-yet-the-books">hexo-theme-yet-the-books</a> 一個分類就是一本書</li>
+</ul>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>
