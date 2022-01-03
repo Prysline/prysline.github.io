@@ -4,11 +4,11 @@
 
 # Site
 title: Prysline's Hexo
-subtitle: ""
-description: ""
+subtitle: "布啾/Boochu"
+description: "梧鼠五技樂無窮"
 keywords:
-author: Prysline Flion
-language: zh
+author: "Prysline"
+language: en
 timezone: ""
 
 # URL
@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
