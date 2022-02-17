@@ -36,4 +36,25 @@
         <tag>hexo</tag>
       </tags>
   </entry>
+  <entry>
+    <title>專案：老爸的私房錢</title>
+    <url>/express/20220217/1886836702/</url>
+    <content><![CDATA[<img alt="index" src="https://raw.githubusercontent.com/Prysline/expense-tracker/main/public/images/index.png" style="display: inline-box; width: 75%; margin: 1em auto;">
+
+<p>專案相關網址：<br><a href="https://serene-fjord-06502.herokuapp.com/">Heroku</a><br><a href="https://github.com/Prysline/expense-tracker">Github</a></p>
+<span id="more"></span>
+<hr>
+<h3 id="你為何會選擇這個專案？"><a href="#你為何會選擇這個專案？" class="headerlink" title="你為何會選擇這個專案？"></a>你為何會選擇這個專案？</h3><p>不同於最單純的 todo list，除了練習 CRUD 功能外，擁有分類系統的記帳本能夠多加練習到用外鍵取得不同資料表的資料。</p>
+<h3 id="你使用了什麼技術？"><a href="#你使用了什麼技術？" class="headerlink" title="你使用了什麼技術？"></a>你使用了什麼技術？</h3><p>使用 Express.js 建置，資料庫系統採用 MongoDB 搭配 Mongoose 套件。<br>前端渲染使用 handlebars 為樣板引擎，並以方便美觀的 bootstrap 5 作為前端開發工具之一。<br>使用者認證系統使用 passport，並使用 bcrypt 進行密碼加密與比對。</p>
+<h3 id="哪部分你相對能掌握？哪裡花了最多時間？"><a href="#哪部分你相對能掌握？哪裡花了最多時間？" class="headerlink" title="哪部分你相對能掌握？哪裡花了最多時間？"></a>哪部分你相對能掌握？哪裡花了最多時間？</h3><p>反覆練習後已經很習慣將 Promise鍊轉換為 async/await 格式。<br>會花比較多的時間，一般是不小心打錯字導致一個 bug 找半天找不到問題出在哪裡。<br>像是在設定登入失敗訊息時沒有跳出訊息，反覆確認了寫訊息的地方都沒有錯漏，最後發現問題在於驗證失敗時的導向將<code>/users/login</code>錯打成了<code>/user/login</code>。<br>通常是錯在大小寫和單複數上，還需要更加熟悉慣例用詞。</p>
+<h3 id="過程中碰到什麼困難？又如何克服？"><a href="#過程中碰到什麼困難？又如何克服？" class="headerlink" title="過程中碰到什麼困難？又如何克服？"></a>過程中碰到什麼困難？又如何克服？</h3><p>在設置 Facebook 驗證時發生了無法登入的問題。<br>試著用私密瀏覽登入看看，多了登入 Facebook 的手續就能確認問題是發生在驗證後。<br>反覆確認後發現是使用者 schema 除了自動產生的 _id ，有額外設定必填的 id 屬性，但在建立新使用者時沒有輸入 id 屬性。<br>補上後就沒問題了。</p>
+<h3 id="過程中你有對哪個技術有特別深刻的學習？"><a href="#過程中你有對哪個技術有特別深刻的學習？" class="headerlink" title="過程中你有對哪個技術有特別深刻的學習？"></a>過程中你有對哪個技術有特別深刻的學習？</h3><p>為了取得渲染用的資料，會需要反覆往資料庫查詢分類列表，練習了將這些都寫成 function 方便反覆取用。</p>
+]]></content>
+      <categories>
+        <category>express</category>
+      </categories>
+      <tags>
+        <tag>express, nodejs</tag>
+      </tags>
+  </entry>
 </search>
