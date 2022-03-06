@@ -30,10 +30,74 @@
 </ul>
 ]]></content>
       <categories>
-        <category>hexo</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用 Socket.io + Express.js 建立聊天伺服器</title>
+    <url>/socketio/20220306/2227968734/</url>
+    <content><![CDATA[<p>在 <a href="https://socket.io/">Socket.IO</a> 的官方網站上就已經有一篇簡單的聊天 app 的入門教學，如果你更喜歡看英文，可以參考這篇： <a href="https://socket.io/get-started/chat">Socket.IO Get started</a> 。<br>官方的教學文章最後也附上了 <a href="https://github.com/socketio/chat-example">GitHub repo</a> ，有興趣的也可以前往下載。</p>
+<p>由於官方提供的是一個小巧簡單的範例，實際要應用在自己習慣的專案結構中的話，依然會面對很多不知道為什麼就卡住無法執行的狀況。</p>
+<p>在這裡想順一遍安裝的過程，以及分享自己遇到的問題和解決方法。</p>
+<span id="more"></span>
+<br>
+
+<h1 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h1><p>本篇介紹適用於已初步了解 Node.js 、Express.js 的讀者。<br>請確保已安裝 Node.js 和 Express.js。</p>
+<h1 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h1><h2 id="1-使用-npm-安裝-socket-IO"><a href="#1-使用-npm-安裝-socket-IO" class="headerlink" title="1. 使用 npm 安裝 socket.IO"></a>1. 使用 npm 安裝 socket.IO</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install socket.io</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-將-socket-io-導入-express-伺服器"><a href="#2-將-socket-io-導入-express-伺服器" class="headerlink" title="2. 將 socket.io 導入 express 伺服器"></a>2. 將 socket.io 導入 express 伺服器</h2><h3 id="server-端"><a href="#server-端" class="headerlink" title="server 端"></a>server 端</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = reqire(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"><span class="keyword">const</span> server = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>).createServer(app)</span><br><span class="line"><span class="keyword">const</span> io = <span class="built_in">require</span>(<span class="string">&#x27;socket.io&#x27;</span>)(server)</span><br><span class="line"></span><br><span class="line">io.on(<span class="string">&#x27;connection&#x27;</span>, <span class="function"><span class="params">socket</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;a user connected&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">3000</span>, <span class="function">() =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`Example app listening on port <span class="subst">$&#123;port&#125;</span>!`</span>))</span><br></pre></td></tr></table></figure>
+
+<p>大家可能會發現，這段按照了原本 node.js 建立伺服器的方式，先導入了 <code>http</code> 模組，並使用 <code>createServer</code> 的方法建立伺服器。<br>習慣使用了 express 的話會覺得困惑， express 不是已經幫我們內建了 http 模組了嗎？<br>這是因為 socket.io 建立伺服器的參數只接受 http 伺服器，包裝過的 express app 是不符合需求的，所以我們得先讓 <code>app</code> 變成 http server ，才能傳遞給 socket.io 建立伺服器。</p>
+<p>此外， <code>const io = require(&#39;socket.io&#39;)(server)</code> 等同以下程式碼：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; Server &#125; = <span class="built_in">require</span>(<span class="string">&#x27;socket.io&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> io = <span class="keyword">new</span> Server(server)</span><br></pre></td></tr></table></figure>
+<p>宣告完變數後，讓 socket.io 開始監聽 <code>connection</code> 並在終端機輸出 <code>a user connected</code> 的訊息。<br>最後就跟一般啟動伺服器一樣，讓伺服器開始監聽 port <code>3000</code>。<br><br></p>
+<h3 id="client-端"><a href="#client-端" class="headerlink" title="client 端"></a>client 端</h3><p>在 html 頁面裡 <code>&lt;/body&gt;</code> 前加入以下程式碼：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;&#123;SERVER_URL&#125;/socket.io/socket.io.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> socket = io(&#123;SERVER_URL&#125;)</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><code>&#123;SERVER_URL&#125;</code> 請代入你稍後啟動的伺服器位置。<br>如果設定和 1. 相同的話，那將會是 <code>http://localhost:3000/</code>。</p>
+<p>如果 html 頁面就放在 <code>http://localhost:3000/</code> 底下的話，甚至可以省略網址：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;/socket.io/socket.io.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> socket = io()</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>此時如果重新啟動伺服器，應該會看到終端機開始出現 <code>a user connected</code> 的訊息。<br>沒有的話就代表沒有連線成功。<br><br></p>
+<h4 id="出問題了怎麼辦！"><a href="#出問題了怎麼辦！" class="headerlink" title="出問題了怎麼辦！"></a>出問題了怎麼辦！</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Access to XMLHttpRequest at <span class="string">&#x27;&#123;SERVER_URL&#125;/socket.io/?EIO=....&#x27;</span> from origin <span class="string">&#x27;&#123;CLIENT_URL&#125;&#x27;</span> has been blocked by CORS policy: No <span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span> header is present on the requested resource.</span><br></pre></td></tr></table></figure>
+
+<p>socket.io 預設是會先使用 HTTP 長輪詢（long-polling）的方式進行傳輸，成功以後才會嘗試以 WebSocket 的通訊協定建立連接。<br>在 server 端與 client 端位於不同網域、不同通訊協定或不同通訊埠（port）的情況下，會被<a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/CORS">跨來源資訊共用（CORS）</a>的機制阻擋請求。<br>關於這點，Socket.IO 官方文件有提供相關處理方式：<a href="https://socket.io/docs/v4/handling-cors/">Handling CORS</a>。</p>
+<p>而這裡，我們直接簡單地禁止使用長輪詢，只用 WebSocket 的方式進行連線。<br>請修改 <code>const socket = io()</code> 為以下程式碼：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> socket = io(&#123; <span class="attr">transports</span>: <span class="string">&#x27;websocket&#x27;</span> &#125;)</span><br></pre></td></tr></table></figure>
+<br>
+  
+  
+<h2 id="3-設定收發訊息-Emitting-events"><a href="#3-設定收發訊息-Emitting-events" class="headerlink" title="3. 設定收發訊息(Emitting events)"></a>3. 設定收發訊息(Emitting events)</h2><h3 id="client-端（傳送）"><a href="#client-端（傳送）" class="headerlink" title="client 端（傳送）"></a>client 端（傳送）</h3><p>這次我們從 client 端開始。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;messages&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">&quot;form&quot;</span> <span class="attr">action</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;input&quot;</span> /&gt;</span><span class="tag">&lt;<span class="name">button</span>&gt;</span>Send<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;&#123;SERVER_URL&#125;/socket.io/socket.io.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> socket = io(&#123;SERVER_URL&#125;)</span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> messages = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;messages&#x27;</span>)</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> form = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;form&#x27;</span>)</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> input = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;input&#x27;</span>)</span></span><br><span class="line"><span class="javascript"></span></span><br><span class="line"><span class="javascript">    form.addEventListener(<span class="string">&#x27;submit&#x27;</span>, <span class="function"><span class="keyword">function</span> <span class="title">onFormSubmit</span>(<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      e.preventDefault()</span></span><br><span class="line"><span class="javascript">      <span class="keyword">if</span> (input.value) &#123;</span></span><br><span class="line"><span class="javascript">        socket.emit(<span class="string">&#x27;chat message&#x27;</span>, input.value)</span></span><br><span class="line"><span class="javascript">        input.value = <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="javascript">      &#125;</span></span><br><span class="line"><span class="javascript">    &#125;)</span></span><br><span class="line"><span class="javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="server-端-1"><a href="#server-端-1" class="headerlink" title="server 端"></a>server 端</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = reqire(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"><span class="keyword">const</span> server = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>).createServer(app)</span><br><span class="line"><span class="keyword">const</span> io = <span class="built_in">require</span>(<span class="string">&#x27;socket.io&#x27;</span>)(server)</span><br><span class="line"></span><br><span class="line">io.on(<span class="string">&#x27;connection&#x27;</span>, <span class="function"><span class="params">socket</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;a user connected&#x27;</span>)</span><br><span class="line">  socket.on(<span class="string">&#x27;chat message&#x27;</span>, <span class="function"><span class="params">msg</span> =&gt;</span> &#123;</span><br><span class="line">    io.emit(<span class="string">&#x27;chat message&#x27;</span>, msg)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.listen(<span class="number">3000</span>, <span class="function">() =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`Example app listening on port <span class="subst">$&#123;port&#125;</span>!`</span>))</span><br></pre></td></tr></table></figure>
+
+<p>socket.io 以 <code>socket.emit(&#123;EVENT_NAME&#125;, &#123;EMIT_COMMENT&#125;)</code> 的方法將資訊送出，並以 <code>socket.on(&#123;EVENT_NAME&#125;, function (&#123;EMIT_COMMENT&#125;))</code> 的方法監聽 <code>&#123;EVENT_NAME&#125;</code> 事件並接受訊息。<br>在接收到訊息後，socket.io 的伺服器應把該訊息廣播出去，要傳入的參數和 client 端傳送訊息時相同，只是這次是由伺服器進行發送。</p>
+<p>在這裡使用 <code>io.emit(&#123;EVENT_NAME&#125;, &#123;EMIT_COMMENT&#125;)</code> 進行廣播，這會把資訊傳給所有當前連線的 client 端。</p>
+<h3 id="client-端（接收）"><a href="#client-端（接收）" class="headerlink" title="client 端（接收）"></a>client 端（接收）</h3><p>現在，我們該讓 client 端監聽同樣的事件並接收訊息。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> socket = io(&#123;SERVER_URL&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> messages = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;messages&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> form = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;form&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> input = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;input&#x27;</span>)</span><br><span class="line"></span><br><span class="line">form.addEventListener(<span class="string">&#x27;submit&#x27;</span>, <span class="function"><span class="keyword">function</span> <span class="title">onFormSubmit</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  e.preventDefault()</span><br><span class="line">  <span class="keyword">if</span> (input.value) &#123;</span><br><span class="line">    socket.emit(<span class="string">&#x27;chat message&#x27;</span>, input.value)</span><br><span class="line">    input.value = <span class="string">&#x27;&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">socket.on(<span class="string">&#x27;chat message&#x27;</span>, <span class="function"><span class="params">msg</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> item = <span class="built_in">document</span>.createElement(<span class="string">&#x27;li&#x27;</span>)</span><br><span class="line">  item.textContent = msg</span><br><span class="line">  messages.appendChild(item)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>和 server 端一樣，這裡也是用  <code>socket.on(&#123;EVENT_NAME&#125;, function (&#123;EMIT_COMMENT&#125;))</code> 的方法接收資訊。<br>試著在瀏覽器的輸入框裡打些什麼並送出，這時應該能看見上頭出現訊息了。<br><br></p>
+<p>到這裡，我們有了個又簡易又陽春的聊天平台，你可以用不同分頁開啟同個頁面試著發送內容，如果在舊頁面也有出現相同的訊息，那就成功了！<br><br></p>
+<p>不只是純字串，<code>emit</code> 也能夠傳送 JSON檔，配合 <code>JSON.stringify()</code> 和 <code>JSON.parse()</code> 能夠做出很多有趣的變化。<br><br><br></p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a href="https://socket.io/get-started/chat">Socket.IO Get started</a></li>
+<li><a href="https://ithelp.ithome.com.tw/articles/10237030">［知識篇］淺談即時網頁通訊技術 - Polling / WebSocket / WebRTC</a></li>
+<li><a href="https://blog.gtwang.org/programming/socket-io-node-js-realtime-app/">使用 Node.js 與 Socket.IO 建立即時性（Realtime）網頁應用程式 App</a></li>
+<li><a href="https://www.letswrite.tw/websocket/">WebSocket 基本介紹及使用筆記</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Socket.IO</category>
+      </categories>
+      <tags>
+        <tag>Socket.IO</tag>
+        <tag>WebSocket</tag>
+        <tag>Express</tag>
+        <tag>Node.js</tag>
       </tags>
   </entry>
   <entry>
@@ -51,10 +115,11 @@
 <h3 id="過程中你有對哪個技術有特別深刻的學習？"><a href="#過程中你有對哪個技術有特別深刻的學習？" class="headerlink" title="過程中你有對哪個技術有特別深刻的學習？"></a>過程中你有對哪個技術有特別深刻的學習？</h3><p>為了取得渲染用的資料，會需要反覆往資料庫查詢分類列表，練習了將這些都寫成 function 方便反覆取用。</p>
 ]]></content>
       <categories>
-        <category>express</category>
+        <category>Express</category>
       </categories>
       <tags>
-        <tag>express, nodejs</tag>
+        <tag>Express</tag>
+        <tag>Node.js</tag>
       </tags>
   </entry>
 </search>
