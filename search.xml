@@ -122,4 +122,70 @@
         <tag>Node.js</tag>
       </tags>
   </entry>
+  <entry>
+    <title>用 Socket.IO + Passport-jwt + Express.js 驗證 Bearer Token</title>
+    <url>/socketio/20220306/579800778/</url>
+    <content><![CDATA[<p>一開始會接觸 Socket.IO 是因為 AlphaCamp 的作業專案中，有個加入聊天室功能的挑戰。<br>在該專案中，我的小組是使用前後端分離的方式作業，並且會用 Bearer Token 作為身分認證憑證。<br>加入 Socket.IO 的話，勢必也要通過同樣方式進行憑證認證。</p>
+<p>實作時遇到的最大的困難點就是，要如何在 Socket.IO 傳回的訊息中，帶上 Bearer Token 的資訊。<br>以及在 Passport-jwt 中，要怎麼接到那個 Token。</p>
+<span id="more"></span>
+
+<h1 id="前置"><a href="#前置" class="headerlink" title="前置"></a>前置</h1><p>本篇介紹適用於已初步了解 Node.js、Express.js、Passport-jwt 的讀者。<br>本篇假設讀者已經會使用 Passport-jwt 的 <code>Strategy</code> 和 Passport 的 <code>authenticate</code> 進行驗證。<br>請確保已安裝 Node.js、Express.js、Passport-jwt 和 Socket.IO。</p>
+<p>關於建立 Socket.IO 的伺服器，請參考此篇文章：<a href="https://prysline.github.io/socketio/20220306/2227968734/">使用 Socket.io + Express.js 建立聊天伺服器</a></p>
+<h1 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h1><h2 id="1-建立讓-Socket-IO-能使用-express-middleware-的-helper"><a href="#1-建立讓-Socket-IO-能使用-express-middleware-的-helper" class="headerlink" title="1. 建立讓 Socket.IO 能使用 express middleware 的 helper"></a>1. 建立讓 Socket.IO 能使用 express middleware 的 helper</h2><p>首先新增一個 <code>socketio-helpers.js</code> 檔：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.export = <span class="function"><span class="params">middleware</span> =&gt;</span> <span class="function">(<span class="params">socket, next</span>) =&gt;</span> middleware(socket.request, &#123;&#125;, next)</span><br></pre></td></tr></table></figure>
+
+<p>沒錯，就是這麼簡潔的一行。<br>我個人習慣把小工具都另外拆成一個 .js 檔，喜歡的話也可以直接宣告一個 function 或變數。</p>
+<p>要說明運作原理要從 socket.io 的 middleware 參數說起：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">io.use(<span class="function">(<span class="params">socket, next</span>) =&gt;</span> &#123;</span><br><span class="line"> <span class="keyword">try</span> &#123;</span><br><span class="line">     next()</span><br><span class="line"> &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">     next(<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&#x27;error!&#x27;</span>))</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>socket.io 的 middleware 要傳入的參數為 <code>(socket, next)</code> ，而 express 的 middleware 要傳入的參數為 <code>(req, res, next)</code>。</p>
+<p>我們在 helpers 中傳入我們要轉換給 socket.io 使用的 middleware，而 io.use 會傳入 <code>(socket, next)</code> ，接著我們要處理傳入的資訊，讓它們符合 express middleware 所需要的 <code>(req, res, next)</code> 。</p>
+<ul>
+<li>req：<code>socket.request</code> 裡面帶有來自 client 端的 request reference</li>
+<li>res：這裡沒有東西，放入空物件</li>
+<li>next：直接使用 socket.io 傳入的 <code>next</code></li>
+</ul>
+<p>最後返回的就會是正確裝著 <code>(req, res, next)</code> 的 express middleware 了。</p>
+<h2 id="2-在-client-端連線時加入-Bearer-Token-的資訊"><a href="#2-在-client-端連線時加入-Bearer-Token-的資訊" class="headerlink" title="2. 在 client 端連線時加入 Bearer Token 的資訊"></a>2. 在 client 端連線時加入 Bearer Token 的資訊</h2><p>我們先找到設定 socket.io 連線的地方，改成這樣：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> token = <span class="string">&#x27;eyJ...&#x27;</span></span><br><span class="line"><span class="keyword">const</span> socket = io(&#123;</span><br><span class="line">    <span class="attr">auth</span>: &#123;</span><br><span class="line">        <span class="attr">token</span>: <span class="string">`Bearer <span class="subst">$&#123;token&#125;</span>`</span></span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>這樣每次 socket.io 進行 emit 等連線的時候，就會在資訊中帶上 token 資料。<br>他會把資料放在回傳的 <code>socket.handshake.auth</code> 當中。</p>
+<p>這時我們需要了解一下平常 Bearer Token 都會放在哪裡。</p>
+<p>在我們進行的專案中，passport-jwt 設定取得 token 的方法為 <code>fromAuthHeaderAsBearerToken()</code> 。<br>試著輸出 <code>req.headers</code> 的結果我們會看到這樣的內容：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">authorization</span>: <span class="string">&#x27;Bearer eyJ...&#x27;</span>,</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>從 passport 官網中有描述到，取得 token 的方法是可以<a href="http://www.passportjs.org/packages/passport-jwt/#extracting-the-jwt-from-the-request">自定義</a>的。<br>可是我們要交給 passport-jwt 進行解析的是 <code>req</code> ，也就是 <code>socket.request</code> ，取到的不是 <code>socket.handshake</code> 也不是 <code>socket</code> 啊！</p>
+<h4 id="可是我在搜尋的時候看到有-extraHeaders-的寫法？"><a href="#可是我在搜尋的時候看到有-extraHeaders-的寫法？" class="headerlink" title="可是我在搜尋的時候看到有 extraHeaders 的寫法？"></a>可是我在搜尋的時候看到有 <code>extraHeaders</code> 的寫法？</h4><p>在許多資料內都提到可以改寫成類似這樣的格式：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> token = <span class="string">&#x27;eyJ...&#x27;</span></span><br><span class="line"><span class="keyword">const</span> socket = io(&#123;</span><br><span class="line">    <span class="attr">extraHeaders</span>: &#123;</span><br><span class="line">        <span class="attr">authorization</span>: <span class="string">`Bearer <span class="subst">$&#123;token&#125;</span>`</span></span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>很遺憾的是，雖然號稱是附加 headers，但他會放在 <code>socket.handshake.headers</code> 裡面，而不是 <code>req.headers</code> 中。</p>
+<p>此外，如果<a href="https://prysline.github.io/socketio/20220306/2227968734/#%E5%87%BA%E5%95%8F%E9%A1%8C%E4%BA%86%E6%80%8E%E9%BA%BC%E8%BE%A6%EF%BC%81">只啟用 WebSocket</a>的傳輸方式，<code>extraHeaders</code> 的選項將被忽略，因為 WebSocket API 不允許提供自定義 headers。<br>不過，在 Node.js 或 React-Native 中會正常運作。<br><br></p>
+<p>在這裡我卡了很久，到底要怎麼取得 token。<br>最後我想到了，<code>req.headers</code> 裡面沒有 token 的話就自己塞 token 進去就好了。</p>
+<h2 id="3-加工-helper"><a href="#3-加工-helper" class="headerlink" title="3. 加工 helper"></a>3. 加工 helper</h2><p>我們把先前寫的 helper 做點修改：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.export = <span class="function"><span class="params">middleware</span> =&gt;</span> <span class="function">(<span class="params">socket, next</span>) =&gt;</span> &#123;</span><br><span class="line">    socket.request.headers.authorization = socket.handshake.auth.authorization</span><br><span class="line">    <span class="keyword">return</span> middleware(socket.request, &#123;&#125;, next)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣就能用 passport-jwt 的<code>fromAuthHeaderAsBearerToken()</code> 接到 token 了！<br><br></p>
+<h2 id="4-把-authenticate-放進去"><a href="#4-把-authenticate-放進去" class="headerlink" title="4. 把 authenticate 放進去"></a>4. 把 authenticate 放進去</h2><p>最後，我們來為 socket.io 加上 middleware 吧！</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> passport = reqire(<span class="string">&#x27;./config/passport&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> wrapperForSocketIo = reqire(<span class="string">&#x27;./helpers/socketio-helpers&#x27;</span>)</span><br><span class="line"></span><br><span class="line">io.use(wrapperForSocketIo(passport.initialize()))</span><br><span class="line">io.use(wrapperForSocketIo(passport.authenticate(<span class="string">&#x27;jwt&#x27;</span>, &#123; <span class="attr">session</span>: <span class="literal">false</span> &#125;)))</span><br><span class="line"></span><br><span class="line">io.on(<span class="string">&#x27;connection&#x27;</span>, <span class="function"><span class="params">socket</span> =&gt;</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>這裡預設已經有寫好 passport 的 <code>Strategy</code> ，關於 <code>Strategy</code> 的設定方法可參考 <a href="http://www.passportjs.org/">passport 官網</a>。</p>
+<p>順利的話，這裡應該能再次看到 WebSocket 連線成功的訊息，而拿掉中間驗證用的 middleware 就會看不到訊息。</p>
+<p>注意，由於執行 middleware 時，傳入的 <code>socket</code> 並沒有實際連線上 socket.io 的伺服器，如果在 middleware 間的連接失敗的話，原先要 <code>socket</code> 執行的動作就不會執行。<br>比如說，client 端傳了 <code>socket.disconnect()</code> 想要結束連線，若是 middleware 間連接失敗，便不會執行結束連線的動作。<br><br><br>這樣我們就完成了 socket.io 用 passport-jwt 驗證的寫法囉！<br><br><br></p>
+<h1 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h1><ul>
+<li><a href="https://socket.io/docs/v4/middlewares/">Socket.IO - Sending credentials</a></li>
+<li><a href="https://philenius.github.io/web%20development/2021/03/31/use-passportjs-for-authentication-in-socket-io.html">Usage of Passport JWT Strategy for Authentication in Socket.IO</a></li>
+<li><a href="https://www.npmjs.com/package/passport-jwt.socketio">npm - passport-jwt.socketio</a></li>
+<li><a href="http://www.passportjs.org/packages/passport-jwt/#extracting-the-jwt-from-the-request">Passport - Extracting the JWT from the request</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Socket.IO</category>
+      </categories>
+      <tags>
+        <tag>Socket.IO</tag>
+        <tag>WebSocket</tag>
+        <tag>Express</tag>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
 </search>
