@@ -1,42 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo相關筆記與網站</title>
-    <url>/hexo/20220103/1845879727/</url>
-    <content><![CDATA[<p>紀錄一下建置Hexo時想先筆記起來，方便往後回顧的內容</p>
-<h2 id="入門-Start"><a href="#入門-Start" class="headerlink" title="入門 Start"></a>入門 Start</h2><ul>
-<li><a href="https://hsiangfeng.github.io/hexo/20200914/3741834499/">(1) 試著學 Hexo - 序章</a></li>
-</ul>
-<span id="more"></span>
-
-<h2 id="套件-Packages"><a href="#套件-Packages" class="headerlink" title="套件 Packages"></a>套件 Packages</h2><ul>
-<li><strong>hexo-abbrlink</strong><br><a href="https://hsiangfeng.github.io/hexo/20190517/2562079032/">Hexo Url優化(SEO)</a></li>
-<li><strong>hexo-generator-searchdb</strong><br><a href="https://hsiangfeng.github.io/hexo/20201003/38607376/">(20) 試著學 Hexo - NexT 主題篇 - 可以安裝的套件</a></li>
-</ul>
-<h2 id="插件-Plugins"><a href="#插件-Plugins" class="headerlink" title="插件 Plugins"></a>插件 Plugins</h2><ul>
-<li><strong><a href="https://www.addthis.com/">AddThis</a></strong><br><a href="https://hsiangfeng.github.io/hexo/20201002/1128269164/#AddThis">(19) 試著學 Hexo - NexT 主題篇 - 第三方服務#AddThis</a></li>
-</ul>
-<h2 id="主題-Theme"><a href="#主題-Theme" class="headerlink" title="主題 Theme"></a>主題 Theme</h2><p>收錄個人喜歡的Hexo主題，偏好簡潔為主的設計</p>
-<ul>
-<li><a href="https://github.com/next-theme/hexo-theme-next">hexo-theme-next</a>  目前使用的</li>
-<li><a href="https://github.com/zchengsite/hexo-theme-oranges">hexo-theme-oranges</a></li>
-<li><a href="https://github.com/lh1me/hexo-theme-aomori">hexo-theme-aomori</a><h3 id="多層目錄側邊欗"><a href="#多層目錄側邊欗" class="headerlink" title="多層目錄側邊欗"></a>多層目錄側邊欗</h3></li>
-<li><a href="https://github.com/kaiiiz/hexo-theme-book">hexo-theme-book</a></li>
-<li><a href="https://github.com/wujun234/hexo-theme-tree">hexo-theme-tree</a></li>
-<li><a href="https://github.com/kb1000fx/hexo-theme-insulin">hexo-theme-insulin</a> Vue-like<h3 id="wiki風格"><a href="#wiki風格" class="headerlink" title="wiki風格"></a>wiki風格</h3></li>
-<li><a href="https://github.com/zthxxx/hexo-theme-Wikitten">hexo-theme-Wikitten</a></li>
-<li><a href="https://github.com/xaoxuu/hexo-theme-stellar">hexo-theme-stellar</a><h3 id="書本主題"><a href="#書本主題" class="headerlink" title="書本主題"></a>書本主題</h3></li>
-<li><a href="https://github.com/nexmoe/hexo-theme-yet-the-books">hexo-theme-yet-the-books</a> 一個分類就是一本書</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用 Socket.io + Express.js 建立聊天伺服器</title>
     <url>/socketio/20220306/2227968734/</url>
     <content><![CDATA[<p>在 <a href="https://socket.io/">Socket.IO</a> 的官方網站上就已經有一篇簡單的聊天 app 的入門教學，如果你更喜歡看英文，可以參考這篇： <a href="https://socket.io/get-started/chat">Socket.IO Get started</a> 。<br>官方的教學文章最後也附上了 <a href="https://github.com/socketio/chat-example">GitHub repo</a> ，有興趣的也可以前往下載。</p>
@@ -98,6 +62,117 @@
         <tag>WebSocket</tag>
         <tag>Express</tag>
         <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo相關筆記與網站</title>
+    <url>/hexo/20220103/1845879727/</url>
+    <content><![CDATA[<p>紀錄一下建置Hexo時想先筆記起來，方便往後回顧的內容</p>
+<h2 id="入門-Start"><a href="#入門-Start" class="headerlink" title="入門 Start"></a>入門 Start</h2><ul>
+<li><a href="https://hsiangfeng.github.io/hexo/20200914/3741834499/">(1) 試著學 Hexo - 序章</a></li>
+</ul>
+<span id="more"></span>
+
+<h2 id="套件-Packages"><a href="#套件-Packages" class="headerlink" title="套件 Packages"></a>套件 Packages</h2><ul>
+<li><strong>hexo-abbrlink</strong><br><a href="https://hsiangfeng.github.io/hexo/20190517/2562079032/">Hexo Url優化(SEO)</a></li>
+<li><strong>hexo-generator-searchdb</strong><br><a href="https://hsiangfeng.github.io/hexo/20201003/38607376/">(20) 試著學 Hexo - NexT 主題篇 - 可以安裝的套件</a></li>
+</ul>
+<h2 id="插件-Plugins"><a href="#插件-Plugins" class="headerlink" title="插件 Plugins"></a>插件 Plugins</h2><ul>
+<li><strong><a href="https://www.addthis.com/">AddThis</a></strong><br><a href="https://hsiangfeng.github.io/hexo/20201002/1128269164/#AddThis">(19) 試著學 Hexo - NexT 主題篇 - 第三方服務#AddThis</a></li>
+</ul>
+<h2 id="主題-Theme"><a href="#主題-Theme" class="headerlink" title="主題 Theme"></a>主題 Theme</h2><p>收錄個人喜歡的Hexo主題，偏好簡潔為主的設計</p>
+<ul>
+<li><a href="https://github.com/next-theme/hexo-theme-next">hexo-theme-next</a>  目前使用的</li>
+<li><a href="https://github.com/zchengsite/hexo-theme-oranges">hexo-theme-oranges</a></li>
+<li><a href="https://github.com/lh1me/hexo-theme-aomori">hexo-theme-aomori</a><h3 id="多層目錄側邊欗"><a href="#多層目錄側邊欗" class="headerlink" title="多層目錄側邊欗"></a>多層目錄側邊欗</h3></li>
+<li><a href="https://github.com/kaiiiz/hexo-theme-book">hexo-theme-book</a></li>
+<li><a href="https://github.com/wujun234/hexo-theme-tree">hexo-theme-tree</a></li>
+<li><a href="https://github.com/kb1000fx/hexo-theme-insulin">hexo-theme-insulin</a> Vue-like<h3 id="wiki風格"><a href="#wiki風格" class="headerlink" title="wiki風格"></a>wiki風格</h3></li>
+<li><a href="https://github.com/zthxxx/hexo-theme-Wikitten">hexo-theme-Wikitten</a></li>
+<li><a href="https://github.com/xaoxuu/hexo-theme-stellar">hexo-theme-stellar</a><h3 id="書本主題"><a href="#書本主題" class="headerlink" title="書本主題"></a>書本主題</h3></li>
+<li><a href="https://github.com/nexmoe/hexo-theme-yet-the-books">hexo-theme-yet-the-books</a> 一個分類就是一本書</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用 textarea 當輸入框時的各種問題</title>
+    <url>/html/20220318/819403421/</url>
+    <content><![CDATA[<p>只是單純想要實現使用 <code>&lt;textarea&gt;&lt;/textarea&gt;</code> 當作輸入框，並以 <code>Shift+Enter</code> 換行、<code>Enter</code> 或 <code>Ctrl+Enter</code> 送出，最後把送出的訊息自動顯示在畫面上。<br>但希望能避免在訊息框中只有空白或換行的時候被送出。</p>
+<p>我沒想到只是這麼單純的事情也會搞得困難重重QQ（一部分是我忘記有很好用的方法可以用……）<br>牽涉到畫面處理的部分好像都特別複雜……越來越覺得前端好厲害好辛苦了。</p>
+<p>為了怕自己下次又遇到同樣需求卻找不到參考資料（甚至關鍵字都不確定要怎麼下比較好），趕緊趁還沒把參考網頁都關掉的時候先整理一篇文。</p>
+<span id="more"></span>
+
+<p>今天會提到的內容：</p>
+<ol>
+<li>使用 Ctrl + Enter 送出</li>
+<li>使用 Ctrl + Enter 或 Enter 送出</li>
+<li>避免送出空白內容</li>
+<li>呈現輸入內容的方法</li>
+</ol>
+<hr>
+<p>使用 <code>&lt;textarea&gt;</code> 代替 <code>&lt;input&gt;</code> 當作文本輸入框的理由，通常是因為有字數較多或換行的需求。常用於表單的描述欄位或是通訊軟體的輸入框上。<br>在輸入時，預設在按下 <code>Enter</code> 或 <code>Shift+Enter</code> 時可以換行，而今天我們希望讓  <code>Ctrl+Enter</code> 可以送出訊息，該怎麼做呢？</p>
+<h2 id="使用-Ctrl-Enter-送出"><a href="#使用-Ctrl-Enter-送出" class="headerlink" title="使用 Ctrl + Enter 送出"></a>使用 Ctrl + Enter 送出</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> textarea = <span class="built_in">document</span>.querySelector(#textarea)</span><br><span class="line"></span><br><span class="line">textarea.addEventListener(<span class="string">&#x27;keyDown&#x27;</span>, <span class="function"><span class="keyword">function</span> <span class="title">onKeyDown</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(e.ctrlKey &amp;&amp; e.keyCode === <span class="number">13</span>) &#123;</span><br><span class="line">    submitForm()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>給 textara 的 DOM 加上事件監聽器，監聽 <code>keyDown</code> 事件<br>這會在按鍵按下時觸發，若按住不放，會持續觸發</li>
+<li>當按住 Ctrl 鍵時，回傳的事件中 <code>ctrlKey = true</code><br>按下 Enter 時，<code>keyCode = 13</code></li>
+<li>呼叫傳送表單的函式</li>
+</ol>
+<p>在開頭的時候有提到，除了 <code>Ctrl+Enter</code> 也希望能按下 <code>Enter</code> 就能發送。<br>於是我做了這樣的改寫：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> textarea = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#textarea&#x27;</span>)</span><br><span class="line"></span><br><span class="line">textarea.addEventListener(<span class="string">&#x27;keyDown&#x27;</span>, <span class="function"><span class="keyword">function</span> <span class="title">onKeyDown</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!e.shiftKey &amp;&amp; e.keyCode === <span class="number">13</span>) &#123;</span><br><span class="line">    submitForm()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h5 id="把-e-ctrlKey-改成-e-shiftKey"><a href="#把-e-ctrlKey-改成-e-shiftKey" class="headerlink" title="把 e.ctrlKey 改成 !e.shiftKey"></a>把 <code>e.ctrlKey</code> 改成 <code>!e.shiftKey</code></h5><p>前面加上 <code>!</code> 是 not 的意思，這一段是指在不按下 Shift 鍵的情況下按下 <code>Enter</code> 就會觸發事件。</p>
+<p>雖然邏輯上，限定  <code>Ctrl+Enter</code> 才能觸發，和除了 <code>Shift+Enter</code> 以外的狀況按下 <code>Enter</code> 會觸發是不同意義。<br>但我主要是想保留 <code>Shift+Enter</code> 的換行功能，所以我就這樣寫了。</p>
+<p>如果想要寫成 <code>if( (e.ctrlKey &amp;&amp; e.keyCode === 13) || e.keyCode === 13 )</code> 也是可以的。</p>
+<p>而按照上面那段程式碼寫後，發生了其他問題：</p>
+<p>我的需求是按下送出後，頁面不會跳轉，填入內容出現在同頁上並清空輸入框。<br>我在程式碼中加上了 <code>textarea.value = &#39;&#39;</code> 的內容， <code>Ctrl+Enter</code> 有正常的送出並清空，但按下 <code>Enter</code> 的時候，輸入框卻自動換行了。<br>這是原本按下 <code>Enter</code> 或按下 <code>Shift+Enter</code> 就有的效果，所以我加上 <code>preventDefault()</code>，這個能取消事件預設行為的語法，就解決這件事了。</p>
+<h2 id="使用-Ctrl-Enter-或-Enter-送出"><a href="#使用-Ctrl-Enter-或-Enter-送出" class="headerlink" title="使用 Ctrl + Enter 或 Enter 送出"></a>使用 Ctrl + Enter 或 Enter 送出</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> textarea = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#textarea&#x27;</span>)</span><br><span class="line"></span><br><span class="line">textarea.addEventListener(<span class="string">&#x27;keyDown&#x27;</span>, <span class="function"><span class="keyword">function</span> <span class="title">onKeyDown</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(!e.shiftKey &amp;&amp; e.keyCode === <span class="number">13</span>) &#123;</span><br><span class="line">    e.preventDefault()</span><br><span class="line">    textarea.value = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    submitForm()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>現在能正常送出了。<br>接下來想要完成的需求是希望能避免內容空白的狀況下被送出。</p>
+<p>要如何得知輸入框裡頭只有空白和空行呢？</p>
+<p>一個簡單的判斷方法如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (textarea.value.trim() === <span class="string">&#x27;&#x27;</span>) <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+
+<p><code>trim()</code> 是 JavaScript 字串的一個方法，可以移除字串開頭和結尾的空白字元，包含空格、換行等。<br>在移除空白後如果剩下空字串，就不做任何事。</p>
+<h2 id="避免送出空白內容"><a href="#避免送出空白內容" class="headerlink" title="避免送出空白內容"></a>避免送出空白內容</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> textarea = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#textarea&#x27;</span>)</span><br><span class="line"></span><br><span class="line">textarea.addEventListener(<span class="string">&#x27;keyDown&#x27;</span>, <span class="function"><span class="keyword">function</span> <span class="title">onKeyDown</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (textarea.value.trim() === <span class="string">&#x27;&#x27;</span>) <span class="keyword">return</span></span><br><span class="line">  <span class="keyword">if</span>(!e.shiftKey &amp;&amp; e.keyCode === <span class="number">13</span>) &#123;</span><br><span class="line">    e.preventDefault()</span><br><span class="line">    textarea.value = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    submitForm()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>除了移除前後空白外，如果希望取得的內容保留文字前的空白只移除最後的空行，可以使用 <code>trimEnd()</code>。<br>相對的，想移除開頭空白，可以使用 <code>trimStart()</code>。</p>
+<p>我們現在能順利送出訊息，也能避免送出空白內容。<br>但當我們想顯示送出的內文˙的時候，卻又發現了新的問題。</p>
+<p>明明在 textarea 中有輸入換行的，怎麼送出後變成一個個空白了呢？<br>這是因為 textarea 中的換行是 <code>\r\n</code>，而 HTML 中的換行為 <code>&lt;br&gt;</code>。</p>
+<h2 id="保留-textarea-中的空白與換行"><a href="#保留-textarea-中的空白與換行" class="headerlink" title="保留 textarea 中的空白與換行"></a>保留 textarea 中的空白與換行</h2><h3 id="1-將-r-n-取代為-lt-br-gt"><a href="#1-將-r-n-取代為-lt-br-gt" class="headerlink" title="1. 將 \r\n 取代為 &lt;br&gt;"></a>1. 將 <code>\r\n</code> 取代為 <code>&lt;br&gt;</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">textarea.value = textarea.value.replace(<span class="regexp">/\r\n/g</span>, <span class="string">&#x27;&lt;br&gt;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>/\r\n/g</code> 為正則表達式，正則表達式會用兩個 <code>/</code> 包住條件，尾巴的 g 代表的是所有搜尋到的該條件內容（不加的話找到第一項就會停止了），在這裡就是將符合 <code>\r\n</code> 的字符通通取代為 <code>&lt;br&gt;</code>。<br>在這之後，使用 <code>textarea.innerHtml</code> 來將內容顯示在網頁中。</p>
+<p>這個方法看似最直覺方便，但這會有 <a href="https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC">XSS</a>  漏洞的問題。<br>被輸入在輸入框的字串如果被當作 html 文本直接傳入網頁會相當危險。<br>會需要先把可能造成危險的字串轉義成對應的字符（如將 <code>&lt;</code> 轉換為 <code>&amp;lt;</code> 等），最後再替換 <code>\r\n</code>。</p>
+<p>可以搜尋關鍵字「htmlEscape XSS」看看。</p>
+<h3 id="2-加上-lt-pre-gt-lt-pre-gt"><a href="#2-加上-lt-pre-gt-lt-pre-gt" class="headerlink" title="2. 加上 &lt;pre&gt;&lt;/pre&gt;"></a>2. 加上 <code>&lt;pre&gt;&lt;/pre&gt;</code></h3><h4 id="推薦此做法！"><a href="#推薦此做法！" class="headerlink" title="推薦此做法！"></a><strong>推薦此做法！</strong></h4><p>把要顯示內容的地方用 pre 包起來，便能完整顯示原先在輸入框中的空格與排版等。<br>需要注意的部分是，沒有做任何處理的情況下，字串長度超過版面寬度也不會自動顯示換行，而是直接突破他的框框長到視窗外面去。</p>
+<p>想要讓他符合版面寬度換行的話，要修改他的 CSS ，新增 <code>white-space: pre-wrap;</code> 或 <code>white-space: pre-line;</code>，前者會同時保留空格和換行，後者則會把多餘的空白合併，並保留換行。<br>而 pre 本身也有預設的一些樣式（如上下 margin 等），會需要進行額外的 CSS 調整。</p>
+<p>如果覺得還要特地為 pre 調整樣式太麻煩，還有最後一個方法：</p>
+<h3 id="3-在渲染標籤的-style-中加上-white-space"><a href="#3-在渲染標籤的-style-中加上-white-space" class="headerlink" title="3. 在渲染標籤的 style 中加上 white-space"></a>3. 在渲染標籤的 style 中加上 <code>white-space</code></h3><p>其實和 2. 的效果相同。<br>被加上 <code>white-space</code> 屬性的元素會決定如何顯示空白與換行符：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attribute">white-space</span>: pre-wrap; //保留所有連續的空白字元，換行會發生在有換行符、&lt;br&gt; 或是被文字空間限制的時候</span><br><span class="line"><span class="attribute">white-space</span>: pre-line; //連續的空白字元會被合併，換行規則同上</span><br><span class="line"><span class="attribute">white-space</span>: pre;      //跟 &lt;pre&gt; 標籤預設相同，會保留空白字元，在有換行符、&lt;br&gt; 時換行，但長字串會不售空間限制長得很長</span><br></pre></td></tr></table></figure>
+
+<p>所以其實如果希望顯示的文字能配合版面的話，只要加上 <code>white-space</code> 樣式就可以了，並不一定要使用 <code>&lt;pre&gt;</code>。</p>
+<hr>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><a href="https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/283397/">js實現按Ctrl Enter傳送效果</a></li>
+<li><a href="http://crazy.molerat.net/learner/cpuroom/net/reading.php?filename=http://crazy.molerat.net/learner/cpuroom/net/100052121100.dov">JavaScript 的 keyCode與鍵盤對應表</a></li>
+<li>MDN - <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/String/Trim">String.prototype.trim()</a></li>
+<li><a href="https://www.796t.com/article.php?id=49737">textarea換行_在textarea中如何換行的實現總彙</a></li>
+<li><a href="https://iter01.com/574704.html">換行與回車（\r \n）的起源以及在編制語言中的使用</a></li>
+<li><a href="https://www.itread01.com/content/1547865564.html">常見textarea換行問題的處理方法</a></li>
+<li><a href="https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-in-html">Which characters need to be escaped in HTML?</a> ←裡面有提供不少轉義建議，以及 XSS 預防規則，推薦閱讀</li>
+<li><a href="https://blog.csdn.net/fjh19950514/article/details/82083662?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~aggregatepage~first_rank_ecpm_v1~rank_v31_ecpm-13-82083662.pc_agg_new_rank&utm_term=js+textarea+%E8%BD%AC%E4%B9%89html&spm=1000.2123.3001.4430">Js特殊字符转义之htmlEscape()方法</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
       </tags>
   </entry>
   <entry>
