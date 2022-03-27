@@ -1,6 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>從 Alpha Camp 線上 web dev 課程跌跌撞撞走來的半年以及更早之前的事</title>
+    <url>/alphacamp/20220327/2464916694/</url>
+    <content><![CDATA[<p>驀然回首，我在 <a href="https://tw.alphacamp.co/">Alpha Camp</a>（下稱 AC）的第一堂課，竟已是去年五月下旬。以學期三課程結束的二月底來算，也距離九個月了。<br>實際的課程長度會更短一些，我為了學習不要太匆忙，在課程之間會空一個班次的時間讓自己有時間消化和休息。</p>
+<p>而從什麼都只了解到一點邊，到現在終於摸到求職門檻的程度，中間跨度更不止這九個月時間。</p>
+<p>現在是時候為自己回顧過往，整理這段時間以來都學到什麼，又是從什麼狀態成長到現在的樣子的。</p>
+<span id="more"></span>
+<h2 id="零、緣起"><a href="#零、緣起" class="headerlink" title="零、緣起"></a>零、緣起</h2><blockquote>
+<p>－ 從設計到程式設計，從程式設計到網站開發</p>
+</blockquote>
+<blockquote>
+<p><img src="https://i239.photobucket.com/albums/ff19/mayhu1993/20100926-1.png"><br>　十幾年前用別人寫的範例文本改的<a href="http://cuc.moe.hm/viewthread.php?tid=2510&extra=page=2">桌寵小軟體</a> ↑</p>
+</blockquote>
+<p>從以前我就或多或少地有在摸索程式設計的領域，但過去我更熱衷其他領域，只把寫 code 當作興趣，那時光靠著修改人家的範例文件做出自己想要的功能就很開心，只是就僅止於此，沒有更加深入過。<br>我也曾經想靠著自學學會程式設計，但自己摸索出的資料零零散散，按著教學課程學習，到最後好像也只學會了基本的 if 和迴圈語法，一被問起其他相關概念就一問三不知。只是學會了基礎常見的程式邏輯，距離真的學會一個語言卻差了好長一大截，即使想補全也不知道該補全哪些。</p>
+<p>在這個時候我剛好看到 AC 的程式設計入門課程，雖然看課綱好像都是網路上自己找得到的 HTML、CSS 教學，JavaScript 一定又要重新學一遍 if、for、while 的概念，<del>但三個禮拜 3000 我覺得很划算，</del>但我抱持著想把以前自己亂亂學時漏掉的概念都補起來的態度，決定加入 AC 的課程。</p>
+<h2 id="一、學期-1：程式設計入門"><a href="#一、學期-1：程式設計入門" class="headerlink" title="一、學期 1：程式設計入門"></a>一、學期 1：程式設計入門</h2><p>不負我的預想，的確練習的部分都是我上面說的基本內容XDD<br>但也不負我的預想，我補上了不少基本觀念，像是運算思維、User story、完整的單頁網頁設計流程等。</p>
+<p>促使我往學期二繼續學的動機是……我終於可以學要怎麼用 JavaScript 讓網頁變化了耶！<del>還有那個老鳥優惠</del></p>
+<p>想當初學期一那個偷跑努力研究半天，最後交了一個有用 JavaScript 操作 DOM 的網頁就覺得好棒棒的自己……欸？才不到一年前欸？</p>
+<h2 id="二、學期-2-1：JavaScript-前端開發"><a href="#二、學期-2-1：JavaScript-前端開發" class="headerlink" title="二、學期 2-1：JavaScript 前端開發"></a>二、學期 2-1：JavaScript 前端開發</h2><p>這階段的主題是簡單切版和 DOM 操作，現在回頭看來，當時苦讀許久的內容，現在大多都豁然開朗了（除了標上【進階】的 Bubbling &amp; Capturing 因為幾乎沒使用所以很不熟悉）。</p>
+<p>CSS 的部分因為還沒經歷前端分支課程切版磨練，現在自己寫全端 Side Project 吃到苦頭了。</p>
+<h2 id="三、學期-2-2：軟體開發實務入門"><a href="#三、學期-2-2：軟體開發實務入門" class="headerlink" title="三、學期 2-2：軟體開發實務入門"></a>三、學期 2-2：軟體開發實務入門</h2><p>作為實務入門，這階段的課程內容包含了串接 API 的課程，以及完整的微專案課程。<br>在這裡第一次接觸到了 sync 和 async 的概念，當時也是努力查了一堆資料、看了一堆範例，實際操作了幾次，卻始終無法理解。<br>是直到 2-3 的課程終於明白 promise 的使用方式。</p>
+<p>而這學期的主題在於小而完整的產品，為之後較大的專案奠定了專案完整流程的基礎。</p>
+<h2 id="四、學期-2-3：後端開發實務"><a href="#四、學期-2-3：後端開發實務" class="headerlink" title="四、學期 2-3：後端開發實務"></a>四、學期 2-3：後端開發實務</h2><p>在開始 2-3 的課程時，必須在前後端中擇一作為主修，自修課程可以閱覽，但不會有助教的作業批改等。</p>
+<p>我選擇了後端的課程。<br>出於覺得自己平面設計的品味其實沒有很好，對前端需要具備的能力相對比較沒自信，再加上當時一直很想學習資料庫的相關概念。</p>
+<p>2-3 開始學習使用 Node.js 和 Express 架設全端伺服器，以及學習操作資料的 CRUD。<br>在這裡學習的資料庫是 MongoDB 和 Mongoose，我想有可能是因為關聯式資料庫的規則會更複雜，所以初學 CRUD 時，教材才會選用非關聯式資料庫教授。<br>而基礎打好後，要學習不同的東西，概念相同的部分就能很快理解。</p>
+<p>在 2-3 剛開始時，一切都是嶄新的東西，操作起來依然是手忙腳亂，查資料查到手斷。<br>現在回頭看來，雖然比當初熟悉許多，但仍不敢說自己真的懂 Node.js 和 Express 的使用。</p>
+<p>這樣一串回顧下來這才發現，每個階段的課程安排似乎有一半都會直接複習到上個階段的內容，或許也是因為這樣的課程安排，才能夠學得更加紮實。</p>
+<h2 id="五、學期-3：軟體工程師養成-後端課程"><a href="#五、學期-3：軟體工程師養成-後端課程" class="headerlink" title="五、學期 3：軟體工程師養成 - 後端課程"></a>五、學期 3：軟體工程師養成 - 後端課程</h2><p>學期 3 是學期 2 每個階段課程的兩倍時長，但困難度是兩個禮拜濃縮成一週的感覺XDD</p>
+<p>上一階段的課程中，學會了建立完整並帶有資料庫的網站，到這學期，就要學習現代必定會用上的認證系統，連帶著也會帶入一些資安的教育。<br>而因為絕大部分的工具都是非同步的，所以在這學期也特地安排了一週課程專門說明非同步處理，也是到了這裡，我才真正覺得自己開始瞭解 promise function。</p>
+<p>在這之後是 SQL 的課程，我終於學到我心心念念的資料庫設計觀念。<br>在這一週一口氣要學會 SQL 的基礎，再將先前 MongoDB 的成品改裝成 MySQL 的版本。<br>……不過 SQL 的查詢功能那些我花了三四天還是沒完全弄清資料庫的查詢方式。<br>也許需要更多更多更多更多的練習才能摸清吧。</p>
+<p>在倒數的三、四週，我們練習了不同關聯方式的資料表如何設定和查詢，以及後端如何設計 API，這些都是為了在學期的最後兩週，和畢業考等同重要的活動——同學間將會組成小組進行團隊開發專案。</p>
+<p>關於該專案的心得在日後也會發表出來。</p>
+<hr>
+<p>在學期 3 中，比較可惜的部分是因為剛好撞上年前家裡忙碌以及委託工作時程，再加上課程困難度上升許多，有不少我進度落後或是快速看過的地方，交作業也無法像學期 2 那樣恣意揮灑時間加上各種讓自己更快樂的功能改良，幾乎只有滿足基本作業要求就交出了。</p>
+<p>在結業之後有種馬拉松結束的感覺<del>，接著開始大爆忙目前的接案工作（委託案件總是在你最忙的時候大暴增）</del>。<br>目前在手頭工作、履歷準備、面試準備、Side Project 作品以及身心健康家庭和睦之間找到人生的平衡。</p>
+<p>希望自己能跨過這一步，也謝謝一路上給予幫助的大家，還有一直都在努力的自己🙏</p>
+]]></content>
+      <categories>
+        <category>AlphaCamp</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo相關筆記與網站</title>
+    <url>/hexo/20220103/1845879727/</url>
+    <content><![CDATA[<p>紀錄一下建置Hexo時想先筆記起來，方便往後回顧的內容</p>
+<h2 id="入門-Start"><a href="#入門-Start" class="headerlink" title="入門 Start"></a>入門 Start</h2><ul>
+<li><a href="https://hsiangfeng.github.io/hexo/20200914/3741834499/">(1) 試著學 Hexo - 序章</a></li>
+</ul>
+<span id="more"></span>
+
+<h2 id="套件-Packages"><a href="#套件-Packages" class="headerlink" title="套件 Packages"></a>套件 Packages</h2><ul>
+<li><strong>hexo-abbrlink</strong><br><a href="https://hsiangfeng.github.io/hexo/20190517/2562079032/">Hexo Url優化(SEO)</a></li>
+<li><strong>hexo-generator-searchdb</strong><br><a href="https://hsiangfeng.github.io/hexo/20201003/38607376/">(20) 試著學 Hexo - NexT 主題篇 - 可以安裝的套件</a></li>
+</ul>
+<h2 id="插件-Plugins"><a href="#插件-Plugins" class="headerlink" title="插件 Plugins"></a>插件 Plugins</h2><ul>
+<li><strong><a href="https://www.addthis.com/">AddThis</a></strong><br><a href="https://hsiangfeng.github.io/hexo/20201002/1128269164/#AddThis">(19) 試著學 Hexo - NexT 主題篇 - 第三方服務#AddThis</a></li>
+</ul>
+<h2 id="主題-Theme"><a href="#主題-Theme" class="headerlink" title="主題 Theme"></a>主題 Theme</h2><p>收錄個人喜歡的Hexo主題，偏好簡潔為主的設計</p>
+<ul>
+<li><a href="https://github.com/next-theme/hexo-theme-next">hexo-theme-next</a>  目前使用的</li>
+<li><a href="https://github.com/zchengsite/hexo-theme-oranges">hexo-theme-oranges</a></li>
+<li><a href="https://github.com/lh1me/hexo-theme-aomori">hexo-theme-aomori</a><h3 id="多層目錄側邊欗"><a href="#多層目錄側邊欗" class="headerlink" title="多層目錄側邊欗"></a>多層目錄側邊欗</h3></li>
+<li><a href="https://github.com/kaiiiz/hexo-theme-book">hexo-theme-book</a></li>
+<li><a href="https://github.com/wujun234/hexo-theme-tree">hexo-theme-tree</a></li>
+<li><a href="https://github.com/kb1000fx/hexo-theme-insulin">hexo-theme-insulin</a> Vue-like<h3 id="wiki風格"><a href="#wiki風格" class="headerlink" title="wiki風格"></a>wiki風格</h3></li>
+<li><a href="https://github.com/zthxxx/hexo-theme-Wikitten">hexo-theme-Wikitten</a></li>
+<li><a href="https://github.com/xaoxuu/hexo-theme-stellar">hexo-theme-stellar</a><h3 id="書本主題"><a href="#書本主題" class="headerlink" title="書本主題"></a>書本主題</h3></li>
+<li><a href="https://github.com/nexmoe/hexo-theme-yet-the-books">hexo-theme-yet-the-books</a> 一個分類就是一本書</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用 Socket.io + Express.js 建立聊天伺服器</title>
     <url>/socketio/20220306/2227968734/</url>
     <content><![CDATA[<p>在 <a href="https://socket.io/">Socket.IO</a> 的官方網站上就已經有一篇簡單的聊天 app 的入門教學，如果你更喜歡看英文，可以參考這篇： <a href="https://socket.io/get-started/chat">Socket.IO Get started</a> 。<br>官方的教學文章最後也附上了 <a href="https://github.com/socketio/chat-example">GitHub repo</a> ，有興趣的也可以前往下載。</p>
@@ -62,42 +142,6 @@
         <tag>WebSocket</tag>
         <tag>Express</tag>
         <tag>Node.js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo相關筆記與網站</title>
-    <url>/hexo/20220103/1845879727/</url>
-    <content><![CDATA[<p>紀錄一下建置Hexo時想先筆記起來，方便往後回顧的內容</p>
-<h2 id="入門-Start"><a href="#入門-Start" class="headerlink" title="入門 Start"></a>入門 Start</h2><ul>
-<li><a href="https://hsiangfeng.github.io/hexo/20200914/3741834499/">(1) 試著學 Hexo - 序章</a></li>
-</ul>
-<span id="more"></span>
-
-<h2 id="套件-Packages"><a href="#套件-Packages" class="headerlink" title="套件 Packages"></a>套件 Packages</h2><ul>
-<li><strong>hexo-abbrlink</strong><br><a href="https://hsiangfeng.github.io/hexo/20190517/2562079032/">Hexo Url優化(SEO)</a></li>
-<li><strong>hexo-generator-searchdb</strong><br><a href="https://hsiangfeng.github.io/hexo/20201003/38607376/">(20) 試著學 Hexo - NexT 主題篇 - 可以安裝的套件</a></li>
-</ul>
-<h2 id="插件-Plugins"><a href="#插件-Plugins" class="headerlink" title="插件 Plugins"></a>插件 Plugins</h2><ul>
-<li><strong><a href="https://www.addthis.com/">AddThis</a></strong><br><a href="https://hsiangfeng.github.io/hexo/20201002/1128269164/#AddThis">(19) 試著學 Hexo - NexT 主題篇 - 第三方服務#AddThis</a></li>
-</ul>
-<h2 id="主題-Theme"><a href="#主題-Theme" class="headerlink" title="主題 Theme"></a>主題 Theme</h2><p>收錄個人喜歡的Hexo主題，偏好簡潔為主的設計</p>
-<ul>
-<li><a href="https://github.com/next-theme/hexo-theme-next">hexo-theme-next</a>  目前使用的</li>
-<li><a href="https://github.com/zchengsite/hexo-theme-oranges">hexo-theme-oranges</a></li>
-<li><a href="https://github.com/lh1me/hexo-theme-aomori">hexo-theme-aomori</a><h3 id="多層目錄側邊欗"><a href="#多層目錄側邊欗" class="headerlink" title="多層目錄側邊欗"></a>多層目錄側邊欗</h3></li>
-<li><a href="https://github.com/kaiiiz/hexo-theme-book">hexo-theme-book</a></li>
-<li><a href="https://github.com/wujun234/hexo-theme-tree">hexo-theme-tree</a></li>
-<li><a href="https://github.com/kb1000fx/hexo-theme-insulin">hexo-theme-insulin</a> Vue-like<h3 id="wiki風格"><a href="#wiki風格" class="headerlink" title="wiki風格"></a>wiki風格</h3></li>
-<li><a href="https://github.com/zthxxx/hexo-theme-Wikitten">hexo-theme-Wikitten</a></li>
-<li><a href="https://github.com/xaoxuu/hexo-theme-stellar">hexo-theme-stellar</a><h3 id="書本主題"><a href="#書本主題" class="headerlink" title="書本主題"></a>書本主題</h3></li>
-<li><a href="https://github.com/nexmoe/hexo-theme-yet-the-books">hexo-theme-yet-the-books</a> 一個分類就是一本書</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
